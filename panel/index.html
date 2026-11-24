@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font: 12px system-ui, sans-serif; color: #ddd; background: #232323; margin: 0; padding: 10px; }
+  h1 { font-size: 13px; margin: 0 0 8px; }
+  .row { display: flex; gap: 6px; align-items: center; margin: 6px 0; }
+  input[type=text], input[type=password] { flex: 1; background: #1a1a1a; color: #ddd; border: 1px solid #444; padding: 4px; }
+  button { background: #3a3a3a; color: #eee; border: 1px solid #555; padding: 4px 8px; cursor: pointer; }
+  #status { padding: 6px; border-radius: 3px; background: #333; }
+  #status.ok { background: #1f3d24; } #status.bad { background: #4a2020; }
+  #sandbox { word-break: break-all; color: #aaa; }
+  #log { margin-top: 8px; height: 120px; overflow: auto; background: #1a1a1a; padding: 4px; font: 11px monospace; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+  <h1>Premiere MCP Bridge</h1>
+  <div id="status">Starting…</div>
+  <div class="row"><button id="setSandbox">Use current project as sandbox</button></div>
+  <div id="sandbox">Sandbox: none</div>
+  <div class="row"><label><input id="guard" type="checkbox"> Guard writes to sandbox only</label></div>
+  <div class="row"><label><input id="raw" type="checkbox"> Allow raw scripts (pr_eval)</label></div>
+  <div id="log"></div>
+  <script src="main.js"></script>
+</body>
+</html>
